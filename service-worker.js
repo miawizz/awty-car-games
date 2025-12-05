@@ -1,4 +1,4 @@
-const CACHE_NAME = "are-we-there-yet-v1";
+const CACHE_NAME = "are-we-there-yet-v"2;
 const ASSETS = [
   "./",
   "index.html",
