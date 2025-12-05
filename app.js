@@ -131,4 +131,73 @@ const games = [
     icon: "⭐",
     lines: [
       "How many red items can we spot until we get there. Call them out and work together to keep count.",
-      "Twenty Questions: Someone thinks of a person, place, or thing, and everyone works together to guess in just twenty yes or no questions. Tip: use categories, like Food
+      "Twenty Questions: Someone thinks of a person, place, or thing, and everyone works together to guess in just twenty yes or no questions. Tip: use categories, like Food.",
+      "Animal chain: Name an animal. The next player has to name one that starts with the last letter of the previous animal, like Tiger, Rabbit, Turtle.",
+      "ABC Search: Try to spot something that starts with each letter of the alphabet, in order from A to Z.",
+      "Rainbow Search: Spot something red, then orange, then yellow, green, blue, and purple.",
+      "Categories: Pick a category like animals, breakfast foods, or Disney movies. Take turns naming something in that category until someone runs out of ideas."
+    ]
+  }
+];
+
+function createGameItem(game, index) {
+  const wrapper = document.createElement("article");
+  wrapper.className = "game";
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "game-header";
+  button.setAttribute("aria-expanded", "false");
+  button.setAttribute("data-index", index);
+
+  const iconSpan = document.createElement("span");
+  iconSpan.className = "game-icon";
+  iconSpan.textContent = game.icon || "★";
+
+  const titleSpan = document.createElement("span");
+  titleSpan.className = "game-title";
+  titleSpan.textContent = game.title;
+
+  const chevron = document.createElement("span");
+  chevron.className = "chevron";
+  chevron.textContent = "+";
+
+  button.appendChild(iconSpan);
+  button.appendChild(titleSpan);
+  button.appendChild(chevron);
+
+  const body = document.createElement("div");
+  body.className = "game-body";
+  body.hidden = true;
+
+  const list = document.createElement("ul");
+  game.lines.forEach(line => {
+    const li = document.createElement("li");
+    li.textContent = line;
+    list.appendChild(li);
+  });
+  body.appendChild(list);
+
+  button.addEventListener("click", () => {
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!expanded));
+    body.hidden = expanded;
+    chevron.textContent = expanded ? "+" : "–";
+  });
+
+  wrapper.appendChild(button);
+  wrapper.appendChild(body);
+  return wrapper;
+}
+
+function renderGames() {
+  const container = document.getElementById("games-list");
+  container.innerHTML = "";
+
+  games.forEach((game, index) => {
+    const item = createGameItem(game, index);
+    container.appendChild(item);
+  });
+}
+
+renderGames();
