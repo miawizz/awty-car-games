@@ -1,6 +1,7 @@
 const games = [
   {
     title: "Gibberish Translator",
+    icon: "🗣️",
     lines: [
       "Speak in a made-up, nonsense language.",
       "Kids try to translate.",
@@ -10,6 +11,7 @@ const games = [
   },
   {
     title: "Song on the Spot",
+    icon: "🎵",
     lines: [
       "Make up a melody and a line.",
       "The next person sings the next line.",
@@ -19,6 +21,7 @@ const games = [
   },
   {
     title: "Billboard Spokesperson",
+    icon: "📢",
     lines: [
       "Read road signs in your best over the top commercial voice.",
       "Extra points for dramatic flair and character voices.",
@@ -27,6 +30,7 @@ const games = [
   },
   {
     title: "Guess Who (Real Life Version)",
+    icon: "❓",
     lines: [
       "Pick someone you both know.",
       "Ask yes or no questions only until you figure it out."
@@ -34,6 +38,7 @@ const games = [
   },
   {
     title: "Car Mind Reader",
+    icon: "🚗",
     lines: [
       "As you pass a car, quickly say what you think the driver is thinking.",
       "Fast, funny, and no overthinking allowed.",
@@ -42,6 +47,7 @@ const games = [
   },
   {
     title: "Would You Rather",
+    icon: "🤔",
     lines: [
       "Take turns asking ridiculous Would You Rather questions.",
       "The sillier, the better.",
@@ -50,6 +56,7 @@ const games = [
   },
   {
     title: "Pass the Poem",
+    icon: "✍️",
     lines: [
       "Write or say a silly rhyme.",
       "The next person adds a rhyming line.",
@@ -58,6 +65,7 @@ const games = [
   },
   {
     title: "Alphabet Conversation",
+    icon: "🔤",
     lines: [
       "Each sentence starts with the next letter of the alphabet.",
       "A, B, C all the way to Z.",
@@ -66,6 +74,7 @@ const games = [
   },
   {
     title: "Counting Conversation",
+    icon: "🔢",
     lines: [
       "Start with a one word sentence.",
       "Then two words, then three.",
@@ -74,6 +83,7 @@ const games = [
   },
   {
     title: "Fortunately and Unfortunately",
+    icon: "⚖️",
     lines: [
       "Tell a story, one sentence at a time.",
       "Alternate starting each sentence with Fortunately and Unfortunately."
@@ -81,6 +91,7 @@ const games = [
   },
   {
     title: "Popcorn Story",
+    icon: "🍿",
     lines: [
       "Take turns telling a story, a few sentences at a time.",
       "Say Popcorn when you are ready to pop it to the next person.",
@@ -89,6 +100,7 @@ const games = [
   },
   {
     title: "One Word Story",
+    icon: "🧩",
     lines: [
       "Make up a story, one word at a time.",
       "You say one word, they say the next.",
@@ -98,6 +110,7 @@ const games = [
   },
   {
     title: "What If I Laughed Like This",
+    icon: "😂",
     lines: [
       "Make your weirdest laugh or cry.",
       "Try not to laugh for real while the others go.",
@@ -106,6 +119,7 @@ const games = [
   },
   {
     title: "Mind Meld",
+    icon: "🧠",
     lines: [
       "Count down three two one and each say a random word at the same exact time.",
       "Now, secretly try to think of a word that connects them.",
@@ -114,70 +128,7 @@ const games = [
   },
   {
     title: "Simple Classics",
+    icon: "⭐",
     lines: [
       "How many red items can we spot until we get there. Call them out and work together to keep count.",
-      "Twenty Questions: Someone thinks of a person, place, or thing, and everyone works together to guess in just twenty yes or no questions. Tip: use categories, like Food.",
-      "Animal chain: Name an animal. The next player has to name one that starts with the last letter of the previous animal, like Tiger, Rabbit, Turtle.",
-      "ABC Search: Try to spot something that starts with each letter of the alphabet, in order from A to Z.",
-      "Rainbow Search: Spot something red, then orange, then yellow, green, blue, and purple.",
-      "Categories: Pick a category like animals, breakfast foods, or Disney movies. Take turns naming something in that category until someone runs out of ideas."
-    ]
-  }
-];
-
-function createGameItem(game, index) {
-  const wrapper = document.createElement("article");
-  wrapper.className = "game";
-
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = "game-header";
-  button.setAttribute("aria-expanded", "false");
-  button.setAttribute("data-index", index);
-
-  const titleSpan = document.createElement("span");
-  titleSpan.className = "game-title";
-  titleSpan.textContent = game.title;
-
-  const chevron = document.createElement("span");
-  chevron.className = "chevron";
-  chevron.textContent = "+";
-
-  button.appendChild(titleSpan);
-  button.appendChild(chevron);
-
-  const body = document.createElement("div");
-  body.className = "game-body";
-  body.hidden = true;
-
-  const list = document.createElement("ul");
-  game.lines.forEach(line => {
-    const li = document.createElement("li");
-    li.textContent = line;
-    list.appendChild(li);
-  });
-  body.appendChild(list);
-
-  button.addEventListener("click", () => {
-    const expanded = button.getAttribute("aria-expanded") === "true";
-    button.setAttribute("aria-expanded", String(!expanded));
-    body.hidden = expanded;
-    chevron.textContent = expanded ? "+" : "–";
-  });
-
-  wrapper.appendChild(button);
-  wrapper.appendChild(body);
-  return wrapper;
-}
-
-function renderGames() {
-  const container = document.getElementById("games-list");
-  container.innerHTML = "";
-
-  games.forEach((game, index) => {
-    const item = createGameItem(game, index);
-    container.appendChild(item);
-  });
-}
-
-renderGames();
+      "Twenty Questions: Someone thinks of a person, place, or thing, and everyone works together to guess in just twenty yes or no questions. Tip: use categories, like Food
