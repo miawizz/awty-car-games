@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Are We There Yet – Car Games for Connection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fdf3e7" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icons/icon-192.png" />
+
+  <!-- Example font, swap to your usual brand font stack -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("service-worker.js");
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="logo-heart">♥</span>
+        <span class="logo-text">Playful Heart Parenting</span>
+      </div>
+      <h1>Are We There Yet</h1>
+      <p class="subtitle">Car games for connection</p>
+    </header>
+
+    <main>
+      <section id="card" class="card" aria-live="polite">
+        <!-- Content is filled by app.js -->
+      </section>
+
+      <div class="controls">
+        <button id="prev-btn" type="button">Back</button>
+        <button id="random-btn" type="button">Surprise me</button>
+        <button id="next-btn" type="button">Next game</button>
+      </div>
+
+      <p class="position" id="position-text"></p>
+    </main>
+
+    <footer class="app-footer">
+      <p>Created by Mia Wisinski · @playfulheartparenting</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
