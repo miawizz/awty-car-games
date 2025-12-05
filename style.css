@@ -1,25 +1,21 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
+/* Global styles */
 body {
   margin: 0;
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #fdf3e7;
+  background: #9cc9c3; /* teal background like your Canva border */
   color: #333;
 }
 
 .app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  max-width: 480px;
+  max-width: 520px;
   margin: 0 auto;
+  padding: 16px;
+  background: #fdf3e7;
+  border-radius: 24px;
 }
 
+/* Header */
 .app-header {
   text-align: center;
   margin-bottom: 12px;
@@ -34,6 +30,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 4px;
+  color: #699eb0;
 }
 
 .logo-heart {
@@ -43,80 +40,94 @@ body {
 .app-header h1 {
   font-size: 22px;
   margin: 4px 0;
+  color: #5a8aa4;
 }
 
 .subtitle {
   font-size: 14px;
-  color: #777;
+  color: #f28c8c;
 }
 
-.card {
-  flex: 1;
+/* Welcome box */
+.welcome {
   background: #fffaf3;
   border-radius: 16px;
-  padding: 16px 18px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 12px 14px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.welcome-tip {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.welcome-install {
+  padding-left: 18px;
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+/* Games list container */
+.games-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 10px;
 }
 
-.card h2 {
-  font-size: 20px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: #d96882;
+/* Accordion items */
+.game {
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
-.card ul {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.card li {
-  margin-bottom: 6px;
-  font-size: 15px;
-}
-
-.controls {
-  display: flex;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.controls button {
-  flex: 1;
+.game-header {
+  width: 100%;
   border: none;
-  border-radius: 999px;
-  padding: 10px 12px;
-  font-size: 14px;
+  background: #ffffff;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  background: #70b7b0;
-  color: #fff;
 }
 
-#prev-btn {
-  background: #e5c372;
+.game-header:focus-visible {
+  outline: 2px solid #f49fb2;
+  outline-offset: 2px;
 }
 
-#random-btn {
-  background: #f49fb2;
+.game-title {
+  text-align: left;
 }
 
-.controls button:active {
-  transform: translateY(1px);
+.chevron {
+  font-size: 18px;
+  padding-left: 8px;
 }
 
-.position {
-  margin-top: 8px;
-  text-align: center;
-  font-size: 12px;
-  color: #777;
+.game-body {
+  border-top: 1px solid #f2e3d0;
+  padding: 10px 16px 12px;
+  font-size: 14px;
 }
 
+.game-body ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.game-body li {
+  margin-bottom: 6px;
+}
+
+/* Footer */
 .app-footer {
-  margin-top: 16px;
+  margin-top: 18px;
   text-align: center;
   font-size: 11px;
   color: #999;
