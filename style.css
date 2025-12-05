@@ -13,12 +13,13 @@ body {
   padding: 16px;
   background: #fdf3e7;
   border-radius: 24px;
+  box-sizing: border-box;
 }
 
 /* Header */
 .app-header {
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .logo-area {
@@ -46,6 +47,20 @@ body {
 .subtitle {
   font-size: 14px;
   color: #f28c8c;
+}
+
+/* Hero graphic */
+.hero-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  display: block;
 }
 
 /* Welcome box */
@@ -83,14 +98,16 @@ body {
   overflow: hidden;
 }
 
+/* Use grid to line up icon, title, chevron */
 .game-header {
   width: 100%;
   border: none;
   background: #ffffff;
   padding: 12px 14px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -101,15 +118,24 @@ body {
   outline-offset: 2px;
 }
 
+/* Icon image beside each title */
+.game-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: inline-block;
+}
+
 .game-title {
   text-align: left;
 }
 
 .chevron {
   font-size: 18px;
-  padding-left: 8px;
+  padding-left: 4px;
 }
 
+/* Body of each accordion item */
 .game-body {
   border-top: 1px solid #f2e3d0;
   padding: 10px 16px 12px;
