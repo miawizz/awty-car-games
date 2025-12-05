@@ -20,6 +20,15 @@ const games = [
     ]
   },
   {
+    title: "Bawk That Tune",
+    icon: "icons/chicken.png",
+    lines: [
+      "Take turns bawking different melodies like a chicken and challenge each other to guess the song.",
+      "You can choose any animal language to sing in, like hee-haw for a donkey, baa for a goat, moo for a cow.",
+      "The options are endless!"
+    ]
+  },
+  {
     title: "Billboard Spokesperson",
     icon: "icons/4.png",
     lines: [
@@ -130,12 +139,12 @@ const games = [
     title: "Simple Classics",
     icon: "icons/16.png",
     lines: [
-      "How many... red --or any color you want-- items can we spot until we get there? Let's call them out and work together to keep count!",
-      "Twenty Questions: Someone thinks of a person, place, or thing, and everyone works together to guess in just twenty yes or no questions. Tip: use categories, like Food.",
-      "Animal chain: Name an animal. The next player has to name one that starts with the last letter of the previous animal, like Tiger, Rabbit, Turtle.",
-      "ABC Search: Try to spot something that starts with each letter of the alphabet, in order from A to Z.",
-      "Rainbow Search: Spot something red, then orange, then yellow, green, blue, and purple.",
-      "Categories: Pick a category like animals, breakfast foods, or Disney movies. Take turns naming something in that category until someone runs out of ideas."
+      "<strong>How many red things can we spot</strong>: Pick a color like red or any color you want and count items you see until you get there. Call them out and work together to keep count.",
+      "<strong>Twenty Questions</strong>: Someone thinks of a person, place, or thing, and everyone works together to guess in just twenty yes or no questions. Tip: use categories, like Food.",
+      "<strong>Animal Chain</strong>: Name an animal. The next player has to name one that starts with the last letter of the previous animal, like Tiger, Rabbit, Turtle.",
+      "<strong>ABC Search</strong>: Try to spot something that starts with each letter of the alphabet, in order from A to Z.",
+      "<strong>Rainbow Search</strong>: Spot something red, then orange, then yellow, green, blue, and purple -- in rainbow order! You can limit what you're searching for to just vehicles or let it be anything!",
+      "<strong>Categories</strong>: Pick a category like animals, breakfast foods, or Disney movies. Take turns naming something in that category until someone runs out of ideas."
     ]
   }
 ];
@@ -174,7 +183,8 @@ function createGameItem(game, index) {
   const list = document.createElement("ul");
   game.lines.forEach(line => {
     const li = document.createElement("li");
-    li.textContent = line;
+    // allow bold tags in Simple Classics lines
+    li.innerHTML = line;
     list.appendChild(li);
   });
   body.appendChild(list);
