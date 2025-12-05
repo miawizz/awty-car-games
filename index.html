@@ -7,11 +7,11 @@
   <meta name="theme-color" content="#fdf3e7" />
 
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
 
-  <!-- Example font, swap to your usual brand font stack -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 
   <script>
     if ("serviceWorker" in navigator) {
@@ -21,6 +21,7 @@
     }
   </script>
 </head>
+
 <body>
   <div class="app">
     <header class="app-header">
@@ -29,25 +30,28 @@
         <span class="logo-text">Playful Heart Parenting</span>
       </div>
       <h1>Are We There Yet</h1>
-      <p class="subtitle">Car games for connection</p>
+      <p class="subtitle">car games for connection</p>
     </header>
 
     <main>
-      <section id="card" class="card" aria-live="polite">
-        <!-- Content is filled by app.js -->
+      <!-- Welcome section -->
+      <section class="welcome">
+        <p>Here are some easy, playful, and creative ways to connect as a family on the road, no supplies needed. Just pick a game and go.</p>
+
+        <p class="welcome-tip">Tip: Save this link to your home screen so you can access it like an app anytime.</p>
+
+        <ul class="welcome-install">
+          <li><strong>iPhone</strong>: Tap Share then Add to Home Screen</li>
+          <li><strong>Android</strong>: Tap menu then Add to Home Screen</li>
+        </ul>
       </section>
 
-      <div class="controls">
-        <button id="prev-btn" type="button">Back</button>
-        <button id="random-btn" type="button">Surprise me</button>
-        <button id="next-btn" type="button">Next game</button>
-      </div>
-
-      <p class="position" id="position-text"></p>
+      <!-- Accordion list goes here -->
+      <section id="games-list" class="games-list"></section>
     </main>
 
     <footer class="app-footer">
-      <p>Created by Mia Wisinski · @playfulheartparenting</p>
+      <p>2025 · Playful Heart Parenting · @playfulheartparenting</p>
     </footer>
   </div>
 
