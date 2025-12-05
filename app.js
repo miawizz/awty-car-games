@@ -1,7 +1,7 @@
 const games = [
   {
     title: "Gibberish Translator",
-    icon: "🗣️",
+    icon: "icons/2.png",
     lines: [
       "Speak in a made-up, nonsense language.",
       "Kids try to translate.",
@@ -11,7 +11,7 @@ const games = [
   },
   {
     title: "Song on the Spot",
-    icon: "🎵",
+    icon: "icons/3.png",
     lines: [
       "Make up a melody and a line.",
       "The next person sings the next line.",
@@ -21,7 +21,7 @@ const games = [
   },
   {
     title: "Billboard Spokesperson",
-    icon: "📢",
+    icon: "icons/4.png",
     lines: [
       "Read road signs in your best over the top commercial voice.",
       "Extra points for dramatic flair and character voices.",
@@ -30,7 +30,7 @@ const games = [
   },
   {
     title: "Guess Who (Real Life Version)",
-    icon: "❓",
+    icon: "icons/5.png",
     lines: [
       "Pick someone you both know.",
       "Ask yes or no questions only until you figure it out!"
@@ -38,7 +38,7 @@ const games = [
   },
   {
     title: "Car Mind Reader",
-    icon: "🚗",
+    icon: "icons/6.png",
     lines: [
       "As you pass a car, quickly say what you think the driver is thinking.",
       "Fast, funny, and no overthinking allowed.",
@@ -47,7 +47,7 @@ const games = [
   },
   {
     title: "Would You Rather",
-    icon: "🤔",
+    icon: "icons/7.png",
     lines: [
       "Take turns asking ridiculous Would You Rather questions.",
       "The sillier, the better.",
@@ -56,7 +56,7 @@ const games = [
   },
   {
     title: "Pass the Poem",
-    icon: "✍️",
+    icon: "icons/8.png",
     lines: [
       "Write or say a silly rhyme.",
       "The next person adds a rhyming line.",
@@ -65,7 +65,7 @@ const games = [
   },
   {
     title: "Alphabet Conversation",
-    icon: "🔤",
+    icon: "icons/9.png",
     lines: [
       "Each sentence starts with the next letter of the alphabet.",
       "A.., B..., C... all the way to Z!",
@@ -74,7 +74,7 @@ const games = [
   },
   {
     title: "Counting Conversation",
-    icon: "🔢",
+    icon: "icons/10.png",
     lines: [
       "Start with a one word sentence -- like Hi!",
       "Then two words, then three...",
@@ -83,7 +83,7 @@ const games = [
   },
   {
     title: "Fortunately/Unfortunately",
-    icon: "⚖️",
+    icon: "icons/11.png",
     lines: [
       "Tell a story, one sentence at a time.",
       "Alternate starting each sentence with Fortunately... and Unfortunately..."
@@ -91,7 +91,7 @@ const games = [
   },
   {
     title: "Popcorn Story",
-    icon: "🍿",
+    icon: "icons/12.png",
     lines: [
       "Take turns telling a story, a few sentences at a time.",
       "Say POPCORN! when you are ready to pop it over to the next person.",
@@ -100,7 +100,7 @@ const games = [
   },
   {
     title: "One Word Story",
-    icon: "🧩",
+    icon: "icons/13.png",
     lines: [
       "Make up a story, one word at a time.",
       "You say one word, they say the next.",
@@ -110,7 +110,7 @@ const games = [
   },
   {
     title: "What If I Laughed Like This",
-    icon: "😂",
+    icon: "icons/14.png",
     lines: [
       "Make your weirdest laugh or cry.",
       "Challenge: Try not to laugh for real while the others go!",
@@ -119,7 +119,7 @@ const games = [
   },
   {
     title: "Mind Meld",
-    icon: "🧠",
+    icon: "icons/15.png",
     lines: [
       "Count down: three... two... one..., then each say a random word at the same exact time.",
       "Now, secretly try to think of a word that connects them.",
@@ -128,7 +128,7 @@ const games = [
   },
   {
     title: "Simple Classics",
-    icon: "⭐",
+    icon: "icons/16.png",
     lines: [
       "How many... red --or any color you want-- items can we spot until we get there? Let's call them out and work together to keep count!",
       "Twenty Questions: Someone thinks of a person, place, or thing, and everyone works together to guess in just twenty yes or no questions. Tip: use categories, like Food.",
