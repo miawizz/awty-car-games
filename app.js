@@ -53,6 +53,15 @@ const games = [
       "Fast, funny, and no overthinking allowed.",
       "Optional: Say what the CARS are thinking!"
     ]
+    },
+    {
+  title: "Who Can Sound Like...",
+  icon: "icons/volume.png",
+  lines: [
+    "Take turns giving each other silly sound prompts, like Who can sound like a donkey talking in its sleep.",
+    "Everyone makes their best version of the sound and you enjoy how different they all are.",
+    "Variation: make a random sound and let others try to guess what you were imitating."
+  ]
   },
   {
     title: "Would You Rather",
@@ -71,6 +80,16 @@ const games = [
       "The next person adds a rhyming line.",
       "Keep going until the poem ends!"
     ]
+  },
+      {
+  title: "Freeze Dance",
+  icon: "icons/carseat.png",
+  lines: [
+    "One person plays DJ and starts the music.",
+    "Everyone dances safely in their seats with head bobs, arm wiggles, silly faces, anything that feels playful.",
+    "When the DJ pauses the music, everyone freezes in place.",
+    "Add fun challenges like Freeze while touching your nose or Freeze with your tongue out."
+  ]
   },
   {
     title: "Alphabet Conversation",
