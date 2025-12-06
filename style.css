@@ -150,7 +150,27 @@ body {
 .game-body li {
   margin-bottom: 6px;
 }
+/* Printable Link section */
+.printable-link {
+  text-align: center;
+  margin: 24px 0 12px;
+}
 
+.printable-link a {
+  display: inline-block;
+  background: #ffe9d6;
+  padding: 12px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #699eb0;
+  border: 2px solid #f2d3b5;
+  transition: 0.2s ease;
+}
+
+.printable-link a:active {
+  transform: scale(0.97);
+}
 /* Footer */
 .app-footer {
   margin-top: 18px;
