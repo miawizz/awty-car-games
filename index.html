@@ -74,5 +74,16 @@
 
 <script src="app.js"></script>
 
+  <script>
+(function () {
+  const isCircle =
+    new URLSearchParams(window.location.search).get("circle") === "1";
+
+  if (isCircle) {
+    document.body.classList.add("circle-mode");
+  }
+})();
+</script>
+  
 </body>
 </html>
