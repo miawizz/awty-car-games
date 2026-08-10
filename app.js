@@ -1,4 +1,17 @@
 const games = [
+    {
+    title: "Simple Classics",
+    subtitle: "Great for younger kiddos",
+    icon: "icons/16.png",
+    lines: [
+      "<strong>How many red things can we spot</strong>: Pick a color like red or any color you want and count items you see until you get there. Call them out and work together to keep count.",
+      "<strong>Twenty Questions</strong>: Someone thinks of a person, place, or thing, and everyone works together to guess in just twenty yes or no questions. Tip: use categories, like Food.",
+      "<strong>Animal Chain</strong>: Name an animal. The next player has to name one that starts with the last letter of the previous animal, like Tiger, Rabbit, Turtle.",
+      "<strong>ABC Search</strong>: Try to spot something that starts with each letter of the alphabet, in order from A to Z.",
+      "<strong>Rainbow Search</strong>: Spot something red, then orange, then yellow, green, blue, and purple -- in rainbow order! You can limit what you're searching for to just vehicles or let it be anything!",
+      "<strong>Categories</strong>: Pick a category like animals, breakfast foods, or Disney movies. Take turns naming something in that category until someone runs out of ideas."
+    ]
+   },
   {
     title: "Gibberish Translator",
     icon: "icons/2.png",
@@ -154,18 +167,7 @@ const games = [
       "Keep going until you say the same word!"
     ]
   },
-  {
-    title: "Simple Classics",
-    icon: "icons/16.png",
-    lines: [
-      "<strong>How many red things can we spot</strong>: Pick a color like red or any color you want and count items you see until you get there. Call them out and work together to keep count.",
-      "<strong>Twenty Questions</strong>: Someone thinks of a person, place, or thing, and everyone works together to guess in just twenty yes or no questions. Tip: use categories, like Food.",
-      "<strong>Animal Chain</strong>: Name an animal. The next player has to name one that starts with the last letter of the previous animal, like Tiger, Rabbit, Turtle.",
-      "<strong>ABC Search</strong>: Try to spot something that starts with each letter of the alphabet, in order from A to Z.",
-      "<strong>Rainbow Search</strong>: Spot something red, then orange, then yellow, green, blue, and purple -- in rainbow order! You can limit what you're searching for to just vehicles or let it be anything!",
-      "<strong>Categories</strong>: Pick a category like animals, breakfast foods, or Disney movies. Take turns naming something in that category until someone runs out of ideas."
-    ]
-  }
+
 ];
 
 function createGameItem(game, index) {
@@ -183,16 +185,28 @@ function createGameItem(game, index) {
   iconImg.src = game.icon;
   iconImg.alt = game.title + " icon";
 
-  const titleSpan = document.createElement("span");
-  titleSpan.className = "game-title";
-  titleSpan.textContent = game.title;
+const titleWrap = document.createElement("div");
+titleWrap.className = "game-title-wrap";
+
+const titleSpan = document.createElement("span");
+titleSpan.className = "game-title";
+titleSpan.textContent = game.title;
+
+titleWrap.appendChild(titleSpan);
+
+if (game.subtitle) {
+  const subtitle = document.createElement("div");
+  subtitle.className = "game-subtitle";
+  subtitle.textContent = game.subtitle;
+  titleWrap.appendChild(subtitle);
+}
 
   const chevron = document.createElement("span");
   chevron.className = "chevron";
   chevron.textContent = "+";
 
   button.appendChild(iconImg);
-  button.appendChild(titleSpan);
+button.appendChild(titleWrap);
   button.appendChild(chevron);
 
   const body = document.createElement("div");
