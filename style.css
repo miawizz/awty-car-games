@@ -213,3 +213,7 @@ body {
   padding-top: 3.5rem;
 }
 
+.circle-mode .home-button{
+  display: none !important;
+}
+
