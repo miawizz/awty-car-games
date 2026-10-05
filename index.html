@@ -39,34 +39,47 @@
   </div>
 
   <main>
+
+    <section class="game-picker">
+
+      <h2>PICK A GAME FOR US!</h2>
+
+      <p class="picker-intro">
+        Can't decide what to play? Pick an age group and we'll choose for you.
+      </p>
+
+      <div class="age-filters">
+        <button class="age-filter active" data-age="all" type="button">
+          All Games
+        </button>
+
+        <button class="age-filter" data-age="younger" type="button">
+          Younger Kids
+        </button>
+
+        <button class="age-filter" data-age="older" type="button">
+          Older Kids
+        </button>
+      </div>
+
+      <div class="picker-result">
+        <div class="picker-label">LET'S PLAY...</div>
+        <div id="picker-title">
+          Tap the button to pick a game!
+        </div>
+      </div>
+
+      <button id="pick-game-button" type="button">
+        Pick a Game!
+      </button>
+
+      <button id="show-picked-game" type="button" hidden>
+        Show Me How to Play
+      </button>
+
+    </section>
+
     <section class="welcome">
-      <section class="game-picker">
-
-  <h2>PICK A GAME FOR US!</h2>
-  <p class="picker-intro">
-    Can't decide what to play? Pick an age group and we'll choose for you.
-  </p>
-
-  <div class="age-filters">
-    <button class="age-filter active" data-age="all">All Games</button>
-    <button class="age-filter" data-age="younger">Younger Kids</button>
-    <button class="age-filter" data-age="older">Older Kids</button>
-  </div>
-
-  <div class="picker-result">
-    <div class="picker-label">LET'S PLAY...</div>
-    <div id="picker-title">Tap the button to pick a game!</div>
-  </div>
-
-  <button id="pick-game-button" type="button">
-    Pick a Game!
-  </button>
-
-  <button id="show-picked-game" type="button" hidden>
-    Show Me How to Play
-  </button>
-
-</section>
       <p>
         Here are some easy, playful, and creative ways to connect as a family on the road,
         no supplies needed. Just pick a game and go.
@@ -74,6 +87,7 @@
     </section>
 
     <section id="games-list" class="games-list"></section>
+
   </main>
 
   <section class="printable-link">
@@ -91,7 +105,8 @@
 </div>
 
 <script src="app.js?v=3"></script>
-  <script>
+
+<script>
 (function () {
   const isCircle =
     new URLSearchParams(window.location.search).get("circle") === "1";
@@ -101,6 +116,6 @@
   }
 })();
 </script>
-  
+
 </body>
 </html>
