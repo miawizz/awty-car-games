@@ -1,4 +1,5 @@
-const CACHE_NAME = "are-we-there-yet-v"2;
+const CACHE_NAME = "are-we-there-yet-v3";
+
 const ASSETS = [
   "./",
   "index.html",
@@ -6,7 +7,8 @@ const ASSETS = [
   "app.js",
   "manifest.webmanifest",
   "icons/icon-192.png",
-  "icons/icon-512.png"
+  "icons/icon-512.png",
+  "icons/are-we-there-yet-hero.png"
 ];
 
 self.addEventListener("install", event => {
