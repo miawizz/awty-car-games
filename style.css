@@ -14,6 +14,7 @@
 }
 
 /* Global */
+
 * {
   box-sizing: border-box;
 }
@@ -131,7 +132,9 @@ a.home-button {
   color: var(--white);
 }
 
-/* Generated result */
+/* =========================
+   GENERATED RESULT
+   ========================= */
 
 .picker-result {
   min-height: 145px;
@@ -160,6 +163,26 @@ a.home-button {
   font-weight: 800;
 }
 
+/* Generated game instructions */
+
+#picker-instructions {
+  width: 100%;
+  margin: 16px 0 0;
+  padding: 16px 18px 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.35);
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+#picker-instructions li {
+  margin-bottom: 7px;
+}
+
+#picker-instructions li:last-child {
+  margin-bottom: 0;
+}
+
 /* Main generator button */
 
 #pick-game-button {
@@ -179,26 +202,6 @@ a.home-button {
 #pick-game-button:active {
   transform: translateY(2px);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
-}
-
-/* Show instructions button */
-
-#show-picked-game {
-  width: 100%;
-  margin-top: 10px;
-  border: 0;
-  border-radius: 16px;
-  padding: 13px 18px;
-  background: var(--teal);
-  color: var(--white);
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-#show-picked-game[hidden] {
-  display: none;
 }
 
 /* =========================
@@ -258,8 +261,7 @@ a.home-button {
 
 .game-header:focus-visible,
 .age-filter:focus-visible,
-#pick-game-button:focus-visible,
-#show-picked-game:focus-visible {
+#pick-game-button:focus-visible {
   outline: 3px solid var(--yellow);
   outline-offset: 2px;
 }
@@ -403,5 +405,10 @@ a.home-button {
 
   #picker-title {
     font-size: 1.25rem;
+  }
+
+  #picker-instructions {
+    padding: 14px 8px 0;
+    font-size: 0.85rem;
   }
 }
