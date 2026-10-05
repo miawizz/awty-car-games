@@ -306,3 +306,94 @@ function renderGames() {
 }
 
 renderGames();
+// -----------------------------
+// PICK A GAME GENERATOR
+// -----------------------------
+
+let selectedAge = "all";
+let pickedGameIndex = null;
+
+const ageFilters = document.querySelectorAll(".age-filter");
+const pickGameButton = document.getElementById("pick-game-button");
+const pickerTitle = document.getElementById("picker-title");
+const showPickedGameButton = document.getElementById("show-picked-game");
+
+// Age filter buttons
+ageFilters.forEach(button => {
+  button.addEventListener("click", () => {
+    selectedAge = button.dataset.age;
+
+    ageFilters.forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    // Reset the current result when changing age groups
+    pickedGameIndex = null;
+    pickerTitle.textContent = "Tap the button to pick a game!";
+    showPickedGameButton.hidden = true;
+  });
+});
+
+// Pick a random game
+pickGameButton.addEventListener("click", () => {
+  const eligibleGames = games
+    .map((game, index) => ({ game, index }))
+    .filter(item => {
+      if (selectedAge === "all") {
+        return true;
+      }
+
+      return (
+        item.game.age === selectedAge ||
+        item.game.age === "both"
+      );
+    });
+
+  if (eligibleGames.length === 0) {
+    pickerTitle.textContent = "No games found!";
+    showPickedGameButton.hidden = true;
+    return;
+  }
+
+  // Avoid immediately picking the same game again
+  let choices = eligibleGames;
+
+  if (eligibleGames.length > 1 && pickedGameIndex !== null) {
+    choices = eligibleGames.filter(
+      item => item.index !== pickedGameIndex
+    );
+  }
+
+  const randomChoice =
+    choices[Math.floor(Math.random() * choices.length)];
+
+  pickedGameIndex = randomChoice.index;
+
+  pickerTitle.textContent = randomChoice.game.title;
+  showPickedGameButton.hidden = false;
+});
+
+// Jump to the selected game and open its instructions
+showPickedGameButton.addEventListener("click", () => {
+  if (pickedGameIndex === null) return;
+
+  const gameItems = document.querySelectorAll(".game");
+  const selectedGame = gameItems[pickedGameIndex];
+
+  if (!selectedGame) return;
+
+  const header = selectedGame.querySelector(".game-header");
+  const body = selectedGame.querySelector(".game-body");
+  const chevron = selectedGame.querySelector(".chevron");
+
+  header.setAttribute("aria-expanded", "true");
+  body.hidden = false;
+  chevron.textContent = "–";
+
+  selectedGame.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+});
