@@ -1,197 +1,41 @@
-/* Global styles */
-body {
-  margin: 0;
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #9cc9c3;
-  color: #333;
+/* =========================
+   ARE WE THERE YET?
+   ========================= */
+
+:root {
+  --cream: #fff9f3;
+  --orange: #e86543;
+  --yellow: #f6c343;
+  --teal: #168c8c;
+  --soft-yellow: #f8df9a;
+  --ink: #3c3c3c;
+  --muted: #6b7f88;
+  --white: #ffffff;
 }
 
-.game-title-wrap{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-}
-
-.game-subtitle{
-  font-size:.8rem;
-  font-style:italic;
-  color:#7a7a7a;
-  margin-top:2px;
-}
-
-.app {
-  min-height: 100vh;
-  max-width: 520px;
-  margin: 0 auto;
-  padding: 16px;
-  background: #fdf3e7;
-  border-radius: 24px;
+/* Global */
+* {
   box-sizing: border-box;
 }
 
-/* Header */
-.app-header {
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-.logo-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 4px;
-  color: #699eb0;
-}
-
-.logo-heart {
-  font-size: 14px;
-}
-
-.app-header h1 {
-  font-size: 22px;
-  margin: 4px 0;
-  color: #5a8aa4;
-}
-
-.subtitle {
-  font-size: 14px;
-  color: #f28c8c;
-}
-
-/* Hero graphic */
-.hero-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.hero-image {
-  width: 100%;
-  max-width: 480px;
-  border-radius: 20px;
-  display: block;
-}
-
-/* Welcome box */
-.welcome {
-  background: #fffaf3;
-  border-radius: 16px;
-  padding: 12px 14px;
-  font-size: 14px;
-  margin-bottom: 16px;
-}
-
-.welcome-tip {
-  font-weight: 600;
-  margin-top: 8px;
-}
-
-.welcome-install {
-  padding-left: 18px;
-  margin: 8px 0 0;
-  font-size: 13px;
-}
-
-/* Games list container */
-.games-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Accordion items */
-.game {
-  border-radius: 14px;
-  background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-}
-
-/* Use grid to line up icon, title, chevron */
-.game-header {
-  width: 100%;
-  border: none;
-  background: #ffffff;
-  padding: 12px 14px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.game-header:focus-visible {
-  outline: 2px solid #f49fb2;
-  outline-offset: 2px;
-}
-
-/* Icon image beside each title */
-.game-icon {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  display: inline-block;
-}
-
-.game-title {
-  text-align: left;
-}
-
-.chevron {
-  font-size: 18px;
-  padding-left: 4px;
-}
-
-/* Body of each accordion item */
-.game-body {
-  border-top: 1px solid #f2e3d0;
-  padding: 10px 16px 12px;
-  font-size: 14px;
-}
-
-.game-body ul {
+body {
   margin: 0;
-  padding-left: 18px;
+  padding: 3.5rem 16px 30px;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
 }
 
-.game-body li {
-  margin-bottom: 6px;
-}
-/* Printable Link section */
-.printable-link {
-  text-align: center;
-  margin: 24px 0 12px;
+.app {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
-.printable-link a {
-  display: inline-block;
-  background: #ffe9d6;
-  padding: 12px 16px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 600;
-  color: #699eb0;
-  border: 2px solid #f2d3b5;
-  transition: 0.2s ease;
-}
+/* =========================
+   BACK TO HUB
+   ========================= */
 
-.printable-link a:active {
-  transform: scale(0.97);
-}
-/* Footer */
-.app-footer {
-  margin-top: 18px;
-  text-align: center;
-  font-size: 11px;
-  color: #999;
-}
-/* Back to Hub button */
 a.home-button {
   position: fixed;
   top: 12px;
@@ -208,12 +52,356 @@ a.home-button {
   z-index: 10002;
 }
 
-/* Give space so button never overlaps header */
-body {
-  padding-top: 3.5rem;
-}
-
-.circle-mode .home-button{
+.circle-mode .home-button {
   display: none !important;
 }
 
+/* =========================
+   LOGO
+   ========================= */
+
+.hero-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 4px auto 24px;
+}
+
+.hero-image {
+  width: 170px;
+  max-width: 45vw;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+/* =========================
+   GAME PICKER
+   ========================= */
+
+.game-picker {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  padding: 26px 22px;
+  background: var(--soft-yellow);
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.game-picker h2 {
+  margin: 0 0 6px;
+  color: var(--teal);
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.picker-intro {
+  margin: 0 auto 18px;
+  max-width: 480px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Age filters */
+
+.age-filters {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.age-filter {
+  flex: 1;
+  max-width: 180px;
+  border: 2px solid var(--teal);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--teal);
+  padding: 10px 8px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.age-filter.active {
+  background: var(--teal);
+  color: var(--white);
+}
+
+/* Generated result */
+
+.picker-result {
+  min-height: 145px;
+  padding: 22px 18px;
+  margin-bottom: 16px;
+  border-radius: 20px;
+  background: var(--orange);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.picker-label {
+  margin-bottom: 8px;
+  color: var(--yellow);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+#picker-title {
+  font-size: 1.45rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+/* Main generator button */
+
+#pick-game-button {
+  width: 100%;
+  border: 0;
+  border-radius: 16px;
+  padding: 15px 18px;
+  background: var(--orange);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12);
+}
+
+#pick-game-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Show instructions button */
+
+#show-picked-game {
+  width: 100%;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 16px;
+  padding: 13px 18px;
+  background: var(--teal);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#show-picked-game[hidden] {
+  display: none;
+}
+
+/* =========================
+   INTRO / BROWSE COPY
+   ========================= */
+
+.welcome {
+  max-width: 680px;
+  margin: 0 auto 16px;
+  padding: 18px 20px;
+  background: var(--white);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.welcome p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* =========================
+   GAME LIST
+   ========================= */
+
+.games-list {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.game {
+  overflow: hidden;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.game-header {
+  width: 100%;
+  border: 0;
+  background: var(--white);
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.game-header:focus-visible,
+.age-filter:focus-visible,
+#pick-game-button:focus-visible,
+#show-picked-game:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.game-icon {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+}
+
+.game-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.game-title {
+  text-align: left;
+}
+
+.game-subtitle {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.chevron {
+  padding-left: 4px;
+  color: var(--teal);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.game-body {
+  padding: 12px 18px 14px;
+  border-top: 1px solid #f0e6dd;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.game-body ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.game-body li {
+  margin-bottom: 7px;
+}
+
+.game-body li:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   PRINT & PLAY
+   ========================= */
+
+.printable-link {
+  max-width: 680px;
+  margin: 24px auto 12px;
+  text-align: center;
+}
+
+.printable-link a {
+  display: block;
+  padding: 16px 18px;
+  background: var(--white);
+  border-radius: 18px;
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.printable-link a:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.app-footer {
+  max-width: 680px;
+  margin: 24px auto 0;
+  text-align: center;
+  color: #999;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.app-footer p {
+  margin: 3px 0;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+  body {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .hero-wrapper {
+    margin-bottom: 18px;
+  }
+
+  .hero-image {
+    width: 155px;
+    max-width: 48vw;
+  }
+
+  .game-picker {
+    padding: 22px 16px;
+    border-radius: 24px;
+  }
+
+  .game-picker h2 {
+    font-size: 1.35rem;
+  }
+
+  .age-filters {
+    gap: 6px;
+  }
+
+  .age-filter {
+    padding: 9px 5px;
+    font-size: 0.72rem;
+  }
+
+  .picker-result {
+    min-height: 125px;
+    padding: 18px 14px;
+  }
+
+  #picker-title {
+    font-size: 1.25rem;
+  }
+}
