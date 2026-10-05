@@ -299,8 +299,12 @@ function renderGames() {
   const container = document.getElementById("games-list");
   container.innerHTML = "";
 
-  games.forEach((game, index) => {
-    const item = createGameItem(game, index);
+  const alphabeticalGames = games
+    .map((game, index) => ({ game, originalIndex: index }))
+    .sort((a, b) => a.game.title.localeCompare(b.game.title));
+
+  alphabeticalGames.forEach(({ game, originalIndex }) => {
+    const item = createGameItem(game, originalIndex);
     container.appendChild(item);
   });
 }
