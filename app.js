@@ -316,7 +316,7 @@ let pickedGameIndex = null;
 const ageFilters = document.querySelectorAll(".age-filter");
 const pickGameButton = document.getElementById("pick-game-button");
 const pickerTitle = document.getElementById("picker-title");
-const showPickedGameButton = document.getElementById("show-picked-game");
+const pickerInstructions = document.getElementById("picker-instructions");
 
 // Age filter buttons
 ageFilters.forEach(button => {
@@ -329,10 +329,12 @@ ageFilters.forEach(button => {
 
     button.classList.add("active");
 
-    // Reset the current result when changing age groups
+    // Reset result when changing age groups
     pickedGameIndex = null;
     pickerTitle.textContent = "Tap the button to pick a game!";
-    showPickedGameButton.hidden = true;
+    pickerInstructions.innerHTML = "";
+    pickerInstructions.hidden = true;
+    pickGameButton.textContent = "Pick a Game!";
   });
 });
 
@@ -353,7 +355,8 @@ pickGameButton.addEventListener("click", () => {
 
   if (eligibleGames.length === 0) {
     pickerTitle.textContent = "No games found!";
-    showPickedGameButton.hidden = true;
+    pickerInstructions.innerHTML = "";
+    pickerInstructions.hidden = true;
     return;
   }
 
@@ -371,29 +374,20 @@ pickGameButton.addEventListener("click", () => {
 
   pickedGameIndex = randomChoice.index;
 
+  // Show title
   pickerTitle.textContent = randomChoice.game.title;
-  showPickedGameButton.hidden = false;
-});
 
-// Jump to the selected game and open its instructions
-showPickedGameButton.addEventListener("click", () => {
-  if (pickedGameIndex === null) return;
+  // Show instructions
+  pickerInstructions.innerHTML = "";
 
-  const gameItems = document.querySelectorAll(".game");
-  const selectedGame = gameItems[pickedGameIndex];
-
-  if (!selectedGame) return;
-
-  const header = selectedGame.querySelector(".game-header");
-  const body = selectedGame.querySelector(".game-body");
-  const chevron = selectedGame.querySelector(".chevron");
-
-  header.setAttribute("aria-expanded", "true");
-  body.hidden = false;
-  chevron.textContent = "–";
-
-  selectedGame.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
+  randomChoice.game.lines.forEach(line => {
+    const li = document.createElement("li");
+    li.innerHTML = line;
+    pickerInstructions.appendChild(li);
   });
+
+  pickerInstructions.hidden = false;
+
+  // Change button after first pick
+  pickGameButton.textContent = "Pick Another Game!";
 });
