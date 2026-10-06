@@ -227,6 +227,35 @@ const games = [
       "Keep going until you say the same word!"
     ]
   }
+,
+{
+  title: "Weirdest Plan Ever",
+  age: "both",
+  icon: "icons/16.png",
+  lines: [
+    "Come up with the weirdest, most imaginative possible plan for an everyday problem.",
+    "Example: How should we cook dinner? Hire a dragon to come breathe on it!"
+  ]
+},
+{
+  title: "License Plate Meanings",
+  age: "both",
+  icon: "icons/16.png",
+  lines: [
+    "Turn the letters on license plates into ridiculous phrases.",
+    "Example: GQT might stand for “Grandmas Quietly Tooting!”"
+  ]
+},
+{
+  title: "Wrong Lyrics Only",
+  age: "both",
+  icon: "icons/16.png",
+  lines: [
+    "Replace key words in familiar songs with silly ones. Bonus points if they rhyme!",
+    "Example: Swap “girl” for “squirrel.”"
+  ]
+}
+  
 ];
 
 function createGameItem(game, index) {
